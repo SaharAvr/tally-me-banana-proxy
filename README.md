@@ -2,7 +2,7 @@
 
 ![Banana Proxy](https://raw.githubusercontent.com/SaharAvr/tally-me-banana-proxy/main/assets/tally-me-banana-proxy-logo.png)
 
-Tally Me Banana Proxy is a simple, lightweight, and powerful proxy server built with Node.js, Express, and Axios. It's designed to route HTTP requests through the proxy server, allowing you to bypass CORS and other issues that may arise. Perfect for web scraping or simply handling requests through a single point.
+Tally Me Banana Proxy is a simple, lightweight, and powerful proxy server built with Node.ts, Express, and Axios. It's designed to route HTTP requests through the proxy server, allowing you to bypass CORS and other issues that may arise. Perfect for web scraping or simply handling requests through a single point.
 
 ## 🚀 Features
 
@@ -13,12 +13,10 @@ Tally Me Banana Proxy is a simple, lightweight, and powerful proxy server built 
 
 ## 📦 Installation
 
-To set up Tally Me Banana Proxy, simply clone the repository and install the required dependencies.
+To set up Tally Me Banana Proxy, simply install it as a global npm package:
 
 ```bash
-$ git clone https://github.com/SaharAvr/tally-me-banana-proxy.git
-$ cd tally-me-banana-proxy
-$ npm install
+$ npm i -g tally-me-banana-proxy
 ```
 
 ## 🏃‍♂️ Running the server
@@ -26,10 +24,10 @@ $ npm install
 To run the Tally Me Banana Proxy server, execute the following command:
 
 ```bash
-$ npm start
+$ tally-me-banana-proxy 3000
 ```
 
-The server will start listening on port `3001`. You can change this by modifying the `app.listen()` call at the bottom of the `index.js` file.
+Replace `3000` with your desired port number. The server will start listening on the specified port.
 
 ## 📚 Usage
 
@@ -37,8 +35,8 @@ To send requests through the Tally Me Banana Proxy server, make a POST request t
 
 ```json
 {
-  "url": "https://example.com",
-  "method": "GET",
+  "url": "https://example.com/api",
+  "method": "POST",
   "headers": {
     "Content-Type": "application/json"
   },
