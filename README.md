@@ -16,7 +16,7 @@ Tally Me Banana Proxy is a simple, lightweight, and powerful proxy server built 
 To set up Tally Me Banana Proxy, simply clone the repository and install the required dependencies.
 
 ```bash
-$ git clone https://github.com/your-username/tally-me-banana-proxy.git
+$ git clone https://github.com/SaharAvr/tally-me-banana-proxy.git
 $ cd tally-me-banana-proxy
 $ npm install
 ```
