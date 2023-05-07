@@ -1,8 +1,7 @@
 {
   "name": "tally-me-banana-proxy",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A lightweight and powerful proxy server",
-  "main": "dist/index.js",
   "bin": {
     "tally-me-banana-proxy": "./dist/cli.js"
   },
