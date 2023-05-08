@@ -60,6 +60,18 @@ The server will respond with the following JSON payload:
 }
 ```
 
+If the server cannot process the request or the response is not valid, the proxy server will return a response with a "continue" field set to `true`:
+
+```json
+{
+  "body": {
+    "continue": true
+  }
+}
+```
+
+This indicates that the client should proceed without waiting for a valid response from the proxy server.
+
 ## 🔒 Security
 
 Tally Me Banana Proxy should be used for development purposes only. It is not suitable for production use, as it may expose your server to security vulnerabilities. Always use a secure and trusted proxy solution for production environments.
