@@ -1,7 +1,7 @@
 /**
  * Tally Me Banana Proxy - A lightweight and powerful proxy server
  * @author Sahar Avraham
- * @version 3.1.0
+ * @version 3.2.0
  */
 
 import express from 'express';
