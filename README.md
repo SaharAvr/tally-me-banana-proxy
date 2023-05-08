@@ -24,7 +24,7 @@ $ npm i -g tally-me-banana-proxy
 To run the Tally Me Banana Proxy server, execute the following command:
 
 ```bash
-$ tally-me-banana-proxy 3000
+$ tally 3000
 ```
 
 Replace `3000` with your desired port number. The server will start listening on the specified port.

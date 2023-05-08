@@ -3,7 +3,7 @@
   "version": "3.1.0",
   "description": "A lightweight and powerful proxy server",
   "bin": {
-    "tally-me-banana-proxy": "./dist/cli.js"
+    "tally": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
