@@ -1,16 +1,33 @@
 /**
  * Tally Me Banana Proxy - A lightweight and powerful proxy server
  * @author Sahar Avraham
- * @version 3.2.0
+ * @version 4.0.0
  */
 
-import express from 'express';
-import bodyParser from 'body-parser';
-import proxyRoute from './routes/proxy';
+import { startHttpServer } from './servers/http';
+import { startTcpServer } from './servers/tcp';
+import { Protocol, Port, Callback, Listen } from './types';
 
-const app = express();
+export const listen: Listen = (
+    protocol: Protocol,
+    port: Port,
+    callback: Callback
+) => {
 
-app.use(bodyParser.json());
-app.use('/proxy', proxyRoute);
+    if (protocol === 'http') {
+        startHttpServer({ port, callback });
+        return;
+    }
 
-export default app;
+    if (protocol === 'tcp') {
+        startTcpServer({ port, callback });
+        return;
+    }
+
+    return callback(new Error(`Unsupported protocol: ${protocol} not supported. Supported protocols are http and tcp`));
+
+};
+
+export default {
+    listen,
+};

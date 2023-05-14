@@ -1,11 +1,16 @@
 #!/usr/bin/env node
 
 import app from './app';
+import { Protocol, Port } from './types';
 
-const [,, portArg] = process.argv;
-const PORT_DEFAULT = 3000;
-const PORT = (portArg ? parseInt(portArg, 10) : PORT_DEFAULT);
+const [,, protocolArg, portArg] = process.argv;
+const PROTOCOL = (protocolArg || 'http') as Protocol;
+const PORT = (portArg ? parseInt(portArg, 10) : 3000) as Port;
 
-app.listen(PORT, () => {
-  console.log(`[Tally Me Banana Proxy]: ⚡⚡⚡ listening on port ${PORT} ⚡⚡⚡`);
+app.listen(PROTOCOL, PORT, err => {
+    if (err) {
+        console.log('[Tally Me Banana Proxy]:', err.message);
+        process.exit(1);
+    }
+    console.log(`[Tally Me Banana Proxy]: 🍌🍌🍌 proxying ${PROTOCOL} requests on port ${PORT}ㅤ🍌🍌🍌`);
 });
