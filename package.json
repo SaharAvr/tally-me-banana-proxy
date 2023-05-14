@@ -1,6 +1,6 @@
 {
   "name": "tally-me-banana-proxy",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "A lightweight and powerful proxy server",
   "author": "SaharAvr <64190984+SaharAvr@users.noreply.github.com>",
   "license": "MIT",
@@ -21,7 +21,7 @@
   ],
   "main": "src/app.ts",
   "bin": {
-    "tally": "tsc && ./dist/cli.js"
+    "tally": "./dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
