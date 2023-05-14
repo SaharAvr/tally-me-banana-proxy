@@ -1,6 +1,6 @@
 # 🍌 Tally Me Banana Proxy 🍌
 
-![Banana Proxy](https://raw.githubusercontent.com/SaharAvr/tally-me-banana-proxy/main/assets/tally-me-banana-proxy-logo.png)
+![Banana Proxy](https://raw.githubusercontent.com/SaharAvr/tally-me-banana-proxy/main/assets/tally-me-banana-proxy.png)
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
