@@ -1,7 +1,7 @@
 /**
  * Tally Me Banana Proxy - A lightweight and powerful proxy server
  * @author Sahar Avraham
- * @version 4.0.0
+ * @version 4.0.1
  */
 
 import { startHttpServer } from './servers/http';
