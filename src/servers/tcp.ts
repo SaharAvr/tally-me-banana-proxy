@@ -1,9 +1,11 @@
-import ssh2 from 'ssh2';
+import ssh2 from 'ssh2-custom';
 import crypto from 'node:crypto';
 import { createSocks5ProxyServer } from '@applitools/eg-socks5-proxy-server';
 import { StartServerOptions, TcpProxyServer } from '../types';
 
-export const startTcpServer = (options: StartServerOptions): TcpProxyServer => {
+const SSH_PORT = 22;
+
+export const startTcpServer = async(options: StartServerOptions): Promise<TcpProxyServer> => {
 
     const { privateKey } = crypto.generateKeyPairSync('rsa', {
         modulusLength: 2048,
@@ -12,12 +14,12 @@ export const startTcpServer = (options: StartServerOptions): TcpProxyServer => {
     });
 
     const sshServer = new ssh2.Server({ hostKeys: [privateKey] });
-    sshServer.listen(2222);
+    sshServer.listen(SSH_PORT);
 
     const socks5Server = createSocks5ProxyServer({
         proxyServer: {
             address: 'localhost',
-            port: 2222,
+            port: SSH_PORT,
         },
     });
     socks5Server.listen(options.port, options.callback);

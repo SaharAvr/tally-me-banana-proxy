@@ -15,7 +15,7 @@ describe('TCP Proxy Server', () => {
     test('should start the TCP proxy server', async() => {
         const port = 5057;
         const promise = new Promise<void>((resolve, reject) => {
-            tcpProxyServer = startTcpServer({
+            startTcpServer({
                 port,
                 callback: err => {
                     if (err) {
@@ -24,6 +24,8 @@ describe('TCP Proxy Server', () => {
                     }
                     resolve();
                 },
+            }).then(server => {
+                tcpProxyServer = server;
             });
         });
 
@@ -44,7 +46,7 @@ describe('TCP Proxy Server', () => {
             targetServer.listen(targetPort, resolve);
         });
 
-        tcpProxyServer = startTcpServer({ port: proxyPort });
+        tcpProxyServer = await startTcpServer({ port: proxyPort });
 
         const agent = new SocksProxyAgent(`socks5://localhost:${proxyPort}`, {
             timeout: 1000,
@@ -92,7 +94,7 @@ describe('TCP Proxy Server', () => {
             targetServer.listen(targetPort, resolve);
         });
 
-        tcpProxyServer = startTcpServer({ port: proxyPort });
+        tcpProxyServer = await startTcpServer({ port: proxyPort });
 
         const agent = new SocksProxyAgent(`socks5://localhost:${proxyPort}`);
 
@@ -138,7 +140,7 @@ describe('TCP Proxy Server', () => {
             targetServer.listen(targetPort, resolve);
         });
 
-        tcpProxyServer = startTcpServer({ port: proxyPort });
+        tcpProxyServer = await startTcpServer({ port: proxyPort });
 
         const agent = new SocksProxyAgent(`socks5://localhost:${proxyPort}`);
 

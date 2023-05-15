@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@applitools/eg-socks5-proxy-server": "0.5.4",
-    "ssh2": "1.12.0",
+    "ssh2-custom": "1.2.0",
     "yargs": "17.7.2"
   },
   "devDependencies": {

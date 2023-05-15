@@ -2,7 +2,6 @@ import * as http from 'http';
 import * as net from 'net';
 import { SocksServer } from '@applitools/eg-socks5-proxy-server';
 
-
 /**
  * Supported protocols (http, tcp)
  */
