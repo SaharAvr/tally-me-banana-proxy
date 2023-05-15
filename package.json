@@ -1,6 +1,6 @@
 {
   "name": "tally-me-banana-proxy",
-  "version": "4.0.4",
+  "version": "4.1.0",
   "description": "A lightweight and powerful proxy server",
   "author": "SaharAvr <64190984+SaharAvr@users.noreply.github.com>",
   "license": "MIT",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@applitools/eg-socks5-proxy-server": "0.5.4",
-    "ssh2-custom": "1.2.0",
+    "ssh2-custom": "1.3.0",
     "yargs": "17.7.2"
   },
   "devDependencies": {

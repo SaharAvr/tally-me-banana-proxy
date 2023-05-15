@@ -2753,10 +2753,10 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
 
-ssh2-custom@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ssh2-custom/-/ssh2-custom-1.2.0.tgz#250a1b4002ae1370f4009aa62a982d4080c3d083"
-  integrity sha512-Xtox7SxOhuJLp9wxymrj+livHDjAwKf+3z1e30HL/uxBWW38AUWWOVq79zKBwn9o+g4SLkrneCvRGAgnFt03PA==
+ssh2-custom@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/ssh2-custom/-/ssh2-custom-1.3.0.tgz#5670f1f66f1612d64c517848cee83d00be5e8d7f"
+  integrity sha512-OlKbOZS9bOOvy10sJBKGrWcs7sh9S/arPv5JmynE6IKWCJXpTnQqM6I1NRD670RjPpwyaF+N+fMwf1R6ro1onQ==
 
 stack-utils@^2.0.3:
   version "2.0.6"
