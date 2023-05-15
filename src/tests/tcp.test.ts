@@ -12,7 +12,7 @@ describe('TCP Proxy Server', () => {
         tcpProxyServer.socks5.close();
     });
 
-    test('should start the TCP proxy server', async() => {
+    test('should start the TCP proxy server', async () => {
         const port = 5057;
         const promise = new Promise<void>((resolve, reject) => {
             tcpProxyServer = startTcpServer({
@@ -30,7 +30,7 @@ describe('TCP Proxy Server', () => {
         await expect(promise).resolves.toBeUndefined();
     });
 
-    test('should handle proxy request for TCP', async() => {
+    test('should handle proxy request for TCP', async () => {
         const targetPort = 5058;
         const proxyPort = 5059;
 
@@ -78,7 +78,7 @@ describe('TCP Proxy Server', () => {
         targetServer.close();
     });
 
-    test('should handle 404 Not Found from target server', async() => {
+    test('should handle 404 Not Found from target server', async () => {
         const targetPort = 5060;
         const proxyPort = 5061;
 
@@ -124,7 +124,7 @@ describe('TCP Proxy Server', () => {
         targetServer.close();
     });
 
-    test('should handle POST request with JSON payload', async() => {
+    test('should handle POST request with JSON payload', async () => {
         const targetPort = 5062;
         const proxyPort = 5063;
 

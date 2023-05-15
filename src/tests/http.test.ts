@@ -11,7 +11,7 @@ describe('HTTP Proxy Server', () => {
         httpProxyServer.close();
     });
 
-    test('should start the HTTP proxy server', async() => {
+    test('should start the HTTP proxy server', async () => {
         const port = 5050;
         const promise = new Promise<void>((resolve, reject) => {
             httpProxyServer = startHttpServer({
@@ -29,7 +29,7 @@ describe('HTTP Proxy Server', () => {
         await expect(promise).resolves.toBeUndefined();
     });
 
-    test('should handle proxy request for HTTP', async() => {
+    test('should handle proxy request for HTTP', async () => {
         const targetPort = 5051;
         const proxyPort = 5052;
 
@@ -75,7 +75,7 @@ describe('HTTP Proxy Server', () => {
         targetServer.close();
     });
 
-    test('should handle 404 Not Found from target server', async() => {
+    test('should handle 404 Not Found from target server', async () => {
         const targetPort = 5053;
         const proxyPort = 5054;
 
@@ -121,7 +121,7 @@ describe('HTTP Proxy Server', () => {
         targetServer.close();
     });
 
-    test('should handle POST request with JSON payload', async() => {
+    test('should handle POST request with JSON payload', async () => {
         const targetPort = 5055;
         const proxyPort = 5056;
 
