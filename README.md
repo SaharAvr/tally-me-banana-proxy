@@ -65,10 +65,10 @@ And that's it! Tally Me Banana Proxy is now installed and ready to use. Head ove
 
 To kickstart your own proxy server, simply use the `tally` command followed by the desired protocol and port number. Tally Me Banana Proxy supports both `http` and `tcp` protocols, providing you with versatility and flexibility.
 
-For example, to create an HTTP proxy server on port 5050, run:
+For example, to create an HTTP proxy server on port 3000, run:
 
 ```bash
-tally http 5050
+tally http 3000
 ```
 
 To create a TCP proxy server on port 5050, run:
@@ -89,7 +89,7 @@ For an HTTP proxy server, expose it to the internet with the following command:
 ngrok http 5050
 ```
 
-For a TCP proxy server, use the command:
+For example, for a TCP proxy server, use the command:
 
 ```bash
 ngrok tcp 5050
@@ -103,10 +103,13 @@ In this section, we'll provide examples of how to use your Tally Me Banana Proxy
 
 #### 🌀 Curl
 
-To harness your proxy server with curl, simply include the `-x` or `--proxy` flag followed by the ngrok URL generated earlier.
+To harness your proxy server with curl, simply include the `-x` or `--proxy` flag followed by our http proxy URL.
 
 ```bash
-curl -x http://<your-ngrok-url> https://wtfismyip.com/json
+tally http 3000
+```
+```bash
+curl -x http://localhost:3000 https://wtfismyip.com/json
 ```
 
 This command fetches the requested URL via your proxy server, allowing you to understand how your proxy server works in conjunction with curl.
@@ -115,12 +118,18 @@ This command fetches the requested URL via your proxy server, allowing you to un
 
 To utilize your proxy server with the popular headless browser library Puppeteer, supply the `--proxy-server` flag with the ngrok URL when launching the browser.
 
+```bash
+tally tcp 5050
+```
+```bash
+ngrok tcp 5050
+```
 ```javascript
 const puppeteer = require('puppeteer');
 
 (async () => {
   const browser = await puppeteer.launch({
-    args: [`--proxy-server=http://<your-ngrok-url>`],
+    args: [`--proxy-server=socks5://<your-ngrok-url>`],
   });
 
   const page = await browser.newPage();
@@ -150,7 +159,7 @@ Tally Me Banana Proxy offers a simple and easy-to-use API, allowing you to integ
 import tally from 'tally-me-banana-proxy';
 
 const protocol = 'http';
-const port = 5050;
+const port = 3000;
 
 tally.listen(protocol, port, (err) => {
   if (err) {
