@@ -5,7 +5,7 @@ import { StartServerOptions, TcpProxyServer } from '../types';
 
 const SSH_PORT = 22;
 
-export const startTcpServer = async(options: StartServerOptions): Promise<TcpProxyServer> => {
+export const startTcpServer = (options: StartServerOptions): TcpProxyServer => {
 
     const { privateKey } = crypto.generateKeyPairSync('rsa', {
         modulusLength: 2048,
