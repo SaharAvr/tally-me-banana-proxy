@@ -3,7 +3,7 @@ import crypto from 'node:crypto';
 import { createSocks5ProxyServer } from '@applitools/eg-socks5-proxy-server';
 import { StartServerOptions, TcpProxyServer } from '../types';
 
-const SSH_PORT = 22;
+const SSH_PORT = 2222;
 
 export const startTcpServer = (options: StartServerOptions): TcpProxyServer => {
 
